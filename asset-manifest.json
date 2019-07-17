@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/counter-first/static/css/main.2cce8147.chunk.css",
+    "main.js": "/counter-first/static/js/main.a50a291e.chunk.js",
+    "main.js.map": "/counter-first/static/js/main.a50a291e.chunk.js.map",
+    "runtime~main.js": "/counter-first/static/js/runtime~main.ee3d5da4.js",
+    "runtime~main.js.map": "/counter-first/static/js/runtime~main.ee3d5da4.js.map",
+    "static/js/2.b41502e9.chunk.js": "/counter-first/static/js/2.b41502e9.chunk.js",
+    "static/js/2.b41502e9.chunk.js.map": "/counter-first/static/js/2.b41502e9.chunk.js.map",
+    "index.html": "/counter-first/index.html",
+    "precache-manifest.a5c5ec90ec6e3b868bdc9600074aa9d9.js": "/counter-first/precache-manifest.a5c5ec90ec6e3b868bdc9600074aa9d9.js",
+    "service-worker.js": "/counter-first/service-worker.js",
+    "static/css/main.2cce8147.chunk.css.map": "/counter-first/static/css/main.2cce8147.chunk.css.map",
+    "static/media/logo.svg": "/counter-first/static/media/logo.5d5d9eef.svg"
+  }
+}

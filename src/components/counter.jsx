@@ -1,38 +1,61 @@
  import React, { Component } from 'react';
  class Counter extends Component {
      state = {  
-         count:0,
-         tag: []
+         value:this.props.value,
+         tag: ['max is 10','min is 0']
          
      };
      styles={
-        fontSize:10,
+        fontSize:60,
         fontWeight:'bold'
      };
      renderTags(){
          if(this.state.tag.length===0) return<p>there are no elements</p>;
-         return  <ul>{this.state.tag.map(tags => <li key={tags}>{tags}</li>)} </ul>;
+         return  <ul>{this.state.tag.map(tags => <ol >{tags}</ol>)} </ul>;
      }
-     render() { 
+     handleIncrement = () => {
+         if(this.state.value<10)
+         {
+        this.setState({value: this.state.value + 1})
+    }
+     };
+     handleDecrement=() =>{
+         if(this.state.value>0)
+         {
+        this.setState({value:this.state.value-1})}
+ };
+     max(){
+        if(this.state.value===10)
+        {
+        return <h2>This is max</h2>;
+        }
+    }
+    min(){
+        if(this.state.value===0)
+        {
+        return <h2>This is min</h2>;
+        }
+    }
+
+     render() {   
         let classes = this.getBadgeClasses();
          return(
-             <div> <h3>Heellllloooooooo</h3>
-             <span style={ this.styles} className={this.getBadgeClasses()}>{this.formatCount()}</span>
-             <button className="btn btn-secondary btn-sm">Increment</button>
+             <div> 
+                 {this.props.children}
+             <span style={ this.styles} className={this.getBadgeClasses()}>{this.state.value}</span>
+             <button onClick={this.handleDecrement} className="btn btn-ternary m-2">Decrement</button>
+             <button onClick={this.handleIncrement} className="btn btn-secondary m-2">Increment</button>
+             <button onClick={()=>this.props.onDelete(this.props.id)} className="btn btn-danger m-2">Delete</button>
+            {this.max()}
+            {this.min()}
             {this.renderTags()}
              </div>
          );
      }
      getBadgeClasses() {
          let classes = "badge m2 badge-";
-         classes += (this.state.count === 0) ? "warning" : "primary";
+         classes += (this.state.value === 0) ? "warning" : "primary";
          return classes;
-     }
-
-     formatCount()
-     {
-         const { count }=this.state;
-         return count === 0 ? 'Zero': count;
      }
  }
   
